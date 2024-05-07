@@ -28,7 +28,7 @@ export default function PropertiesList({apartments}) {
      <div className='container mx-auto my-4 px-auto'>
       
       <h1 className='text-center font-bold text-xl underline '>Featured Properties</h1>
-      <div className='grid grid-cols-3 mx-auto my-3 md:grid-cols-3  gap-4'>
+      <div className='grid grid-cols-1 mx-auto my-3 md:grid-cols-3  gap-4'>
         { currentItems && currentItems.map((appartment)=>{
           return <Apartment  apartment = {appartment}/>
         })}
