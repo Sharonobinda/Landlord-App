@@ -1,5 +1,7 @@
 import React from 'react'
 import { Outlet, Link } from 'react-router-dom'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function
 () {
@@ -58,6 +60,21 @@ export default function
         </div>
         </nav>
         <div className='container mx-auto  bg-grey-300 min-h-[80vh]'>
+        <ToastContainer
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+
+                />
+{/* Same as */}
+<ToastContainer />
           <Outlet />
          </div>
         <div>

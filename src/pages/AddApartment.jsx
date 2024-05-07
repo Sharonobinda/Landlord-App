@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 export default function AddApartment() {
   const [apartment, setApartment] = useState({
@@ -18,6 +19,18 @@ export default function AddApartment() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // Add your code here to submit the form data to your server
+    fetch("http://localhost:3000/apartments", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(apartment),
+      })
+       .then((res) => res.json())
+       .then((data) => {
+        toast.success('data added succesfully')          
+        });
+
     console.log(apartment);
   };
 
