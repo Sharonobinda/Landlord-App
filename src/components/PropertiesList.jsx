@@ -1,8 +1,17 @@
 import React,{ useState, useEffect} from 'react'
 import Apartment from './Apartment'
 import ReactPaginate from 'react-paginate';
+import { useOutletContext } from "react-router-dom";
 export default function PropertiesList({apartments}) {
-    
+  const [searchValue] = useOutletContext();
+  const[searchResult, setSearchResult] = useState([])
+  useEffect(()=>{
+    const results = apartments && apartments.filter((house)=>{
+      return house.Apartment_name.toLowerCase().includes(searchValue.toLowerCase())
+    })
+    setSearchResult(results)
+  },[searchValue])
+  console.log(searchResult)
   const [itemOffset, setItemOffset] = useState(0);
 
   // Simulate fetching apartments from another resources.
@@ -10,7 +19,7 @@ export default function PropertiesList({apartments}) {
   // from an API endpoint with useEffect and useState)
   const endOffset = itemOffset + 6;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
-  const currentItems = apartments.slice(itemOffset, endOffset);
+  const currentItems = searchResult ?.length > 0 ? searchResult.slice(itemOffset, endOffset) : apartments.slice(itemOffset, endOffset)
   const pageCount = Math.ceil(apartments.length / 6);
 
   // Invoke when user click to request another page.
@@ -25,7 +34,7 @@ export default function PropertiesList({apartments}) {
 
   return (
    <>
-     <div className='container mx-auto my-4 px-auto'>
+     <div id = "propertyContainer" className='container mx-auto my-4 px-auto'>
       
       <h1 className='text-center font-bold text-xl underline '>Featured Properties</h1>
       <div className='grid grid-cols-1 mx-auto my-3 md:grid-cols-3  gap-4'>
