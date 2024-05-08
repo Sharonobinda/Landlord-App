@@ -3,7 +3,7 @@ import React from 'react'
 export default function
 () {
   return (
-    <div className='container bg-gray-100'>
+    <div className='container  bg-gray-100'>
       <h1 className='text-xl text-center my-2 underline font-semibold'>About Us</h1>
       <div className='grid grid-cols-1 md:grid-cols-2'>
         <div>

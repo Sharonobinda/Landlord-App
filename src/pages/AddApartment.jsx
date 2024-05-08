@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
 export default function AddApartment() {
+  const nav = useNavigate();
   const [apartment, setApartment] = useState({
     Apartment_name: '',
     description: '',
@@ -28,6 +30,7 @@ export default function AddApartment() {
       })
        .then((res) => res.json())
        .then((data) => {
+        nav("")
         toast.success('data added succesfully')          
         });
 
