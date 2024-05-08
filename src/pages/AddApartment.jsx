@@ -38,8 +38,8 @@ export default function AddApartment() {
 
   return (
     <div className="mx-auto grid grid-cols-2">
-      <div className='flex align-center bg-gray-600 justify-center'>       
-        <img className='h-[80vh] ' src='https://i.pinimg.com/564x/fd/80/42/fd804217e6d70793fa95e401535c1b2e.jpg' alt='add form'/>
+      <div className='flex align-center bg-slate-100justify-center'>       
+        <img className='h-[80vh] ' src='https://i.pinimg.com/564x/8d/a7/6c/8da76c32a81719dc7306a103e448318d.jpg' alt='add form'/>
       </div>
       <div className='p-7'>
         <h1 className='text-center font-semibold text-2xl'>Add Apartment</h1>
