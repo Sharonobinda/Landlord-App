@@ -7,6 +7,7 @@ import About from './pages/About'
 import AddApartment from './pages/AddApartment'
 import Layout from './pages/Layout'
 import Featured from './pages/Featured'
+import UpdateApartment from './pages/UpdateApartment'
 
 function App() {
   
@@ -17,6 +18,7 @@ function App() {
         <Route path = "/"  element ={<Layout />} >
           <Route path = "/"  element ={<Home />} />
           <Route path = "/about"  element ={<About />} />
+          <Route path = "/updateApartment/:id"  element ={<UpdateApartment />} />
           <Route path = "/featured/:id"  element ={<Featured />} />
           <Route path = "/addApartment"  element ={<AddApartment />} />
         </Route>

@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
-export default function AddApartment() {
+
+export default function UpdateApartment() {
   const nav = useNavigate();
+  const {id} = useParams();
   const [apartment, setApartment] = useState({
     Apartment_name: '',
     description: '',
@@ -17,11 +19,16 @@ export default function AddApartment() {
       [e.target.name]: e.target.value,
     });
   };
+  useEffect(() => {
+    fetch(`http://localhost:3000/apartments/${id}`)
+   .then(res => res.json())
+   .then((data) => setApartment(data))
+}, [id])  
 
   const handleSubmit = (e) => {
     e.preventDefault();   
-    fetch("http://localhost:3000/apartments", {
-        method: "POST",
+    fetch(`http://localhost:3000/apartments/${id}`, {
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
         },
@@ -30,7 +37,7 @@ export default function AddApartment() {
        .then((res) => res.json())
        .then((data) => {
         nav("/")
-        toast.success('data added succesfully')          
+        toast.success('Updated succesfully')          
         });
 
     console.log(apartment);
@@ -38,11 +45,11 @@ export default function AddApartment() {
 
   return (
     <div className="mx-auto grid grid-cols-2">
-      <div className='flex align-center bg-gray-600 justify-center'>       
-        <img className='h-[80vh] ' src='https://i.pinimg.com/564x/fd/80/42/fd804217e6d70793fa95e401535c1b2e.jpg' alt='add form'/>
+      <div className='flex align-center bg-gray-100 justify-center'>       
+        <img className='h-[80vh] ' src='https://i.pinimg.com/564x/6d/bb/54/6dbb54c4e41a39cb03d409aff77791a7.jpg' alt='update form'/>
       </div>
       <div className='p-7'>
-        <h1 className='text-center font-semibold text-2xl'>Add Apartment</h1>
+        <h1 className='text-center font-semibold text-2xl'>Update Apartment</h1>
       <form className = " max-w-md mx-auto" onSubmit={handleSubmit}>
         <div className="mb-4 relative z-0 w-full group" >
           <label htmlFor="Apartment_name" className="block text-gray-700 font-bold mb-2">
@@ -99,7 +106,7 @@ export default function AddApartment() {
           type="submit"
           className="bg-gray-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         >
-          Add Apartment
+          Update Apartment
         </button>
       </form>
       </div>
