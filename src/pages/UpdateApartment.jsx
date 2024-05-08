@@ -20,14 +20,14 @@ export default function UpdateApartment() {
     });
   };
   useEffect(() => {
-    fetch(`http://localhost:3000/apartments/${id}`)
+    fetch(`https://landlord-app.onrender.com/apartments/${id}`)
    .then(res => res.json())
    .then((data) => setApartment(data))
 }, [id])  
 
   const handleSubmit = (e) => {
     e.preventDefault();   
-    fetch(`http://localhost:3000/apartments/${id}`, {
+    fetch(`https://landlord-app.onrender.com/apartments/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

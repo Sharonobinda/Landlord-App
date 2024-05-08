@@ -8,14 +8,14 @@ export default function Featured() {
     const{id} = useParams()
     const[apartment, setApartment] = useState({})
     useEffect(() => {
-        fetch(`http://localhost:3000/apartments/${id}`)
+        fetch(`https://landlord-app.onrender.com/apartments/${id}`)
        .then(res => res.json())
        .then(data => setApartment(data))
     }, [id])  
     function handleDelete(id)
 
     {
-      fetch(`http://localhost:3000/apartments/${id}`, {
+      fetch(`https://landlord-app.onrender.com/apartments/${id}`, {
         method: "DELETE"
       })
       .then((data)=> data.json())

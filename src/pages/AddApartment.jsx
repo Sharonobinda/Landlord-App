@@ -20,7 +20,7 @@ export default function AddApartment() {
 
   const handleSubmit = (e) => {
     e.preventDefault();   
-    fetch("http://localhost:3000/apartments", {
+    fetch("https://landlord-app.onrender.com/apartments", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
