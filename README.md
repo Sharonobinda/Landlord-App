@@ -1,6 +1,6 @@
-# React + Vite
 ## LandLord App
 Welcome to Renty, a LandLord App
+#### **By Samuel Wambeo, Sharon Obinda, Samfelix Orimba**
 
 ## Description
 This is our End Of Phase 2 Group Project at Moringa School.
@@ -65,6 +65,9 @@ As a user, I should be able to;
 - Update Apartment
 - View Apartment
 - Filter Apartment by typing into the search bar. Only apartments with a description matching the search term should be shown in the featured apartments page.
+
+## Known Bugs
+The application works perfectly well, no bugs.
 
 ## Live link
 Deployed Frontend can be accessed here [Renty App](https://wambeo.github.io/Polls-App/)  

@@ -9,6 +9,7 @@ import Layout from './pages/Layout'
 import Featured from './pages/Featured'
 import UpdateApartment from './pages/UpdateApartment'
 
+// function that handles the routes
 function App() {
   
 

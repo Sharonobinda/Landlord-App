@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { toast } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
 
+
+// provides a user-friendly interface for adding new apartments to the application.
 export default function AddApartment() {
   const nav = useNavigate();
   const [apartment, setApartment] = useState({

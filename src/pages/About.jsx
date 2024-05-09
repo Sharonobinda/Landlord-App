@@ -1,5 +1,9 @@
 import React from 'react'
 
+// component that renders an "About Us"
+// page with an image, contact information
+ 
+
 export default function
 () {
   return (

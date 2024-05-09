@@ -3,6 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { toast } from 'react-toastify'
 import { Link } from 'react-router-dom';
 
+
+// fetches the details of a specific apartment using the 
+// id parameter from the URL, displays the apartment's information,
 export default function Featured() {
     const nav = useNavigate()
     const{id} = useParams()
